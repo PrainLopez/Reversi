@@ -52,6 +52,7 @@ export function isValidMove(
     let c = col + dc;
     let foundOpponent = false;
 
+    // Traverse in the current direction
     while (r >= 0 && r < BOARD_SIZE && c >= 0 && c < BOARD_SIZE) {
       const cell = board[r][c];
 
@@ -79,7 +80,7 @@ export function isValidMove(
 /**
  * Executes a move for the player at (row, col).
  * Returns a new board state with pieces flipped.
- * Included move validation, will return null if the move is invalid
+ * Returns null if the move is invalid or if it doesn't capture any pieces.
  */
 export function executeMove(
   board: BoardState,
@@ -92,7 +93,7 @@ export function executeMove(
   }
 
   const newBoard = board.map((r) => [...r]);
-  newBoard[row][col] = player;
+  newBoard[row][col] = player; // Place the piece
 
   const opponent: Player = player === "black" ? "white" : "black";
 
@@ -115,10 +116,10 @@ export function executeMove(
             newBoard[flipR][flipC] = player;
           }
         }
-        break;
+        break; // Done with this direction
       } else {
         // Empty cell
-        break;
+        break; // Invalid direction
       }
 
       r += dr;
