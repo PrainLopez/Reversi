@@ -1,0 +1,32 @@
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score-display {
+  display: flex;
+  gap: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.score-item {
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.score-item.active {
+  background-color: #2e8b57;
+  color: white;
+}
+
+.turn-display {
+  font-size: 1.2rem;
+  font-weight: bold;
+}

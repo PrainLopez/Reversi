@@ -1,0 +1,32 @@
+.cell {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: #2e7d32; /* Classic Reversi green */
+  border: 1px solid #1b5e20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.cell:hover {
+  background-color: #388e3c; /* Slightly lighter on hover */
+}
+
+.disc {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Slight 3D effect */
+}
+
+.disc.black {
+  background: radial-gradient(circle at 30% 30%, #444, #000);
+}
+
+.disc.white {
+  background: radial-gradient(circle at 30% 30%, #fff, #ddd);
+}
